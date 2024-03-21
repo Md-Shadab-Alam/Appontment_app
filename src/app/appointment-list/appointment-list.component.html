@@ -1,5 +1,33 @@
-<div>
-    <input [(ngModel)]="newAppointmentTitle" placeholder="description">
-    <input [(ngModel)]="newAppointmentDate" type="date" placeholder="date">
-    <button (click)="addAppointment()">Add</button>
+<div class="container">
+
+    <div class="card mt-3">
+        <div class="row m-2">
+            <div class="col">
+                <h2 class="text-center"> Create new appointment</h2>
+            </div>
+        </div>
+        <div class="row mt-2 p-2 ">
+            <div class="col-md-6 p-2">
+                <input class="form-control" [(ngModel)]="newAppointmentTitle" placeholder="description">
+            </div>
+            <div class="col-md-4 p-2">
+                <input class="form-control" [(ngModel)]="newAppointmentDate" type="date" placeholder="date">
+            </div>
+            <div class="col-md-2 p-2">
+                <button class="btn btn-primary w-100" (click)="addAppointment()">Add</button>
+            </div>
+        </div>
+    </div>
+
+<h2 class="text-center mt-5"> Appointments</h2>
+<!-- using for loop to fetch the data form appointments array one by one in variable appointment
+and seting the index of every element of array
+and then displaying  title and date(the specific format by pipies) using one way data binding
+and then calling the delete function-->
+<ul class="list-group mt-3">
+    <li class="list-group-item d-flex justify-content-between align-items-center border border-dark m-1" *ngFor="let appointment of appointments; index as i">
+         {{appointment.title}}, {{appointment.date | date:'dd.MM.yyyy'}}
+         <button class="btn btn-danger" (click)="deleteAppointment(i)">Delete</button>
+    </li>
+</ul>
 </div>
