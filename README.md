@@ -1,6 +1,12 @@
 # AppontmentApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
+Its a mini project just to practice basic angular concepts.
+i.e use of interface, 
+    formsModule - which is use for two-way data binding using [(ngModel)],
+    use of local storage of browser by json ,
+    use of lifecycle hooks (ngOnInit)
+
 
 ## Development server
 
